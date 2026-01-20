@@ -23,22 +23,21 @@ public class RocketShip {
      of //...\\ on either side.
      */
     public static void printNoseCone() {
-        for( int i = 3; i <= ROCKET_SIZE + 1; i++ )
-            for(int row = 0; row < ROCKET_SIZE; row ++) {
+        for( int i = 1; i <= ROCKET_SIZE + 1; i++ )
+            for(int row = 1; row < ROCKET_SIZE; row ++) {
             
-            for( int j = 1; j <= ROCKET_SIZE + 2 - i; j++ ) {
+            for( int j = 1; j <= ROCKET_SIZE + 1 - i; j++ ) {
                 System.out.print( " " );
             }
-                for( int j = 1; j <= i - 1; j++ ) {
+                for( int j = 1; j <= i; j++ ) {
                 System.out.print( "/" );
             }
-                System.out.print( "*" );
-                for( int j = 1; j <= i - 1; j++ ) {
+                System.out.print( "**" );
+                
+                for( int j = 1; j <= i; j++ ) {
                 System.out.print( "\\" );
             }
-                for( int j = 1; j <= ROCKET_SIZE + 2 - i; j++ ) {
-                System.out.print( " " );
-            }
+
 
             System.out.println();
         }
@@ -64,7 +63,28 @@ public class RocketShip {
      Print the top half of two diamonds between vertical lines.
      */
     public static void printDiamondTop() {
-        // your code goes here.
+     for(int row = 0; row < ROCKET_SIZE * 2; row ++) {
+            System.out.print("|"); {
+
+            int dots = (ROCKET_SIZE * 2 - 1) - row;
+            for(int i = 0; i < dots; i ++) {
+                System.out.print(".");
+            }
+
+            int triangles = row + 1; 
+            for(int i = 0; i < triangles; i ++){
+                System.out.print("/\\");
+            }
+
+            for(int i = 0; i < dots; i ++) {
+                System.out.print(".");
+            }
+
+
+
+            System.out.println("|");
+        }
+    }
         System.out.println("A diamond top should be here.");
     }
     
@@ -72,7 +92,27 @@ public class RocketShip {
      Print the bottom half of two diamonds between vertical lines.
      */
     public static void printDiamondBottom() {
-        // your code goes here.
+        for(int row = 0; row < ROCKET_SIZE * 2; row ++) {
+            System.out.print("|");
+
+            int dots = row;
+            for(int i = 0; i < dots; i ++) {
+                System.out.print(".");
+            }
+
+            int triangles = ROCKET_SIZE * 2 - row; 
+            for(int i = 0; i < triangles; i ++){
+                System.out.print("\\/");
+            }
+
+            for(int i = 0; i < dots; i ++) {
+                System.out.print(".");
+            }
+
+
+
+            System.out.println("|");
+        }
         System.out.println("A diamond bottom should be here.");
     }
     /**
