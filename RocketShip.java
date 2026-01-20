@@ -14,7 +14,19 @@ public class RocketShip {
      This reuses the pattern of the nose cone.
      */
     public static void printNozzle() {
-        printNoseCone();
+        for (int i = 1; i <= ROCKET_SIZE + 1; i++) {
+            for (int j = 1; j <= ROCKET_SIZE + 1 - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print("/");
+            }
+            System.out.print("**");
+            for (int j = 1; j <= i; j++) {
+                System.out.print("\\");
+            }
+            System.out.println();
+        }
     }
     
     /**
@@ -92,7 +104,7 @@ public class RocketShip {
      Print the bottom half of two diamonds between vertical lines.
      */
     public static void printDiamondBottom() {
-        for(int row = 0; row < ROCKET_SIZE * 2; row ++) {
+        for(int row = 0; row < ROCKET_SIZE * 3; row ++) {
             System.out.print("|");
 
             int dots = row;
@@ -100,7 +112,7 @@ public class RocketShip {
                 System.out.print(".");
             }
 
-            int triangles = ROCKET_SIZE * 2 - row; 
+            int triangles = ROCKET_SIZE * 3 - row; 
             for(int i = 0; i < triangles; i ++){
                 System.out.print("\\/");
             }
