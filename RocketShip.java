@@ -23,7 +23,27 @@ public class RocketShip {
      of //...\\ on either side.
      */
     public static void printNoseCone() {
-        // your code goes here.
+        for(int row = 0; row < ROCKET_SIZE * 2; row ++) {
+            System.out.print("|");
+
+            int dots = (ROCKET_SIZE * 2 - 1) - row;
+            for(int i = 0; i < dots; i ++) {
+                System.out.print(".");
+            }
+
+            int triangles = row + 1; 
+            for(int i = 0; i < triangles; i ++){
+                System.out.print("/\\");
+            }
+
+            for(int i = 0; i < dots; i ++) {
+                System.out.print(".");
+            }
+
+
+
+            System.out.println("|");
+        }
         System.out.println("A nose cone should be here.");
     }
     
@@ -61,7 +81,12 @@ public class RocketShip {
       Print +=*=*=*...=+ to fit the width of the rocket.
      */
     public static void printEdge() {
-        // your code goes here.
-        System.out.println("An edge should be here.");
+        System.out.print("+");
+        // write a loop to print =* a variable number of times
+        for (int n = 0; n < ROCKET_SIZE * 2; n ++) {
+            System.out.print("=*");
+        }
+        // print a
+        System.out.print("+");
     }
 }
