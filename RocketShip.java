@@ -70,15 +70,15 @@ public class RocketShip {
      Print the top half of two diamonds between vertical lines.
      */
     public static void printDiamondTop() {
-     for(int row = 0; row < ROCKET_SIZE * 2; row ++) {
+     for(int row = 1; row <= ROCKET_SIZE; row ++) {
             System.out.print("|"); {
 
-            int dots = (ROCKET_SIZE * 2 - 1) - row;
+            int dots = (ROCKET_SIZE - 1) - row;
             for(int i = 0; i < dots; i ++) {
                 System.out.print(".");
             }
 
-            int triangles = row + 1; 
+            int triangles = row; 
             for(int i = 0; i < triangles; i ++){
                 System.out.print("/\\");
             }
@@ -87,7 +87,13 @@ public class RocketShip {
                 System.out.print(".");
             }
 
+            for(int i = 0; i < triangles; i ++){
+                System.out.print("/\\");
+            }
 
+            for(int i = 0; i < dots; i ++) {
+                System.out.print(".");
+            }
 
             System.out.println("|");
         }
@@ -99,7 +105,7 @@ public class RocketShip {
      Print the bottom half of two diamonds between vertical lines.
      */
     public static void printDiamondBottom() {
-        for(int row = 0; row < ROCKET_SIZE * 2; row ++) {
+        for(int row = 0; row < ROCKET_SIZE; row ++) {
             System.out.print("|");
 
             int dots = row;
@@ -107,7 +113,7 @@ public class RocketShip {
                 System.out.print(".");
             }
 
-            int triangles = ROCKET_SIZE * 2 - row; 
+            int triangles = ROCKET_SIZE - row; 
             for(int i = 0; i < triangles; i ++){
                 System.out.print("\\/");
             }
@@ -133,5 +139,6 @@ public class RocketShip {
         }
         // print a
         System.out.print("+");
+        System.out.println();
     }
 }
