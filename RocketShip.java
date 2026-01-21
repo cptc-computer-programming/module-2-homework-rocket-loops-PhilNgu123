@@ -73,7 +73,7 @@ public class RocketShip {
      for(int row = 1; row <= ROCKET_SIZE; row ++) {
             System.out.print("|"); {
 
-            int dots = (ROCKET_SIZE - 1) - row;
+            int dots = (ROCKET_SIZE - row);
             for(int i = 0; i < dots; i ++) {
                 System.out.print(".");
             }
@@ -83,14 +83,16 @@ public class RocketShip {
                 System.out.print("/\\");
             }
 
-            for(int i = 0; i < dots; i ++) {
+            int middleDots = (ROCKET_SIZE * 2 - row * 2);
+
+            for(int i = 0; i < middleDots; i ++) {
                 System.out.print(".");
             }
 
             for(int i = 0; i < triangles; i ++){
                 System.out.print("/\\");
             }
-
+            
             for(int i = 0; i < dots; i ++) {
                 System.out.print(".");
             }
