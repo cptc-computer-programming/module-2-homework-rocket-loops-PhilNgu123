@@ -124,6 +124,19 @@ public class RocketShip {
                 System.out.print(".");
             }
 
+            for(int i = 0; i < dots; i ++) {
+                System.out.print(".");
+            }
+
+
+            for(int i = 0; i < triangles; i ++){
+                System.out.print("\\/");
+            }
+
+            for(int i = 0; i < dots; i ++) {
+                System.out.print(".");
+            }
+            
 
 
             System.out.println("|");
